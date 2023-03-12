@@ -1,7 +1,6 @@
 package org.example.view;
 
 import org.example.controller.ClientController;
-import org.example.model.Client;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
