@@ -9,5 +9,7 @@ public interface IClientService {
     void add(Client client);
     void deleteById(Long id);
     ArrayList findAll();
+    Client findByDni(String dni);
+    void update(Client client);
 
 }

@@ -11,5 +11,7 @@ public interface IClientRepository {
     ArrayList findAll();
     public Long nextIdAvailable();
     Client findById(Long id);
+    Client findByDni(String dni);
+    void update(Client client);
 
 }

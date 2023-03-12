@@ -18,6 +18,15 @@ public class ClientRepository implements IClientRepository{
         clients.add(client);
     }
 
+    public void update(Client client){
+        Client clientToUpdate = findById(client.getId());
+        if(clientToUpdate != null){
+            clientToUpdate.setDni(client.getDni());
+            clientToUpdate.setName(client.getName());
+            clientToUpdate.setSurname(client.getSurname());
+        }
+    }
+
     public ArrayList findAll(){
         return clients;
     }
@@ -56,11 +65,30 @@ public class ClientRepository implements IClientRepository{
         return null;
     }
 
+    public void update(Long id){
+        Client client = findById(id);
+        if(client != null){
+
+        }
+    }
+
     public boolean isEmpty(){
         if(clients.size() == 0){
             return true;
         }
         return false;
+    }
+
+    public Client findByDni(String dni){
+        if(!isEmpty()){
+            for (Client client : clients) {
+                if(client.getDni().equals(dni)){
+                    return client;
+                }
+            }
+            return null;
+        }
+        return null;
     }
 
 }

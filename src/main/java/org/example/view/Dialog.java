@@ -28,7 +28,13 @@ public class Dialog {
                 if (choice == 1) {
                     clientManager();
                 } else if (choice == 2) {
-
+                    //TODO
+                } else if (choice == 3) {
+                    //TODO
+                } else if (choice == 4) {
+                    //TODO
+                } else if (choice == 5) {
+                    //TODO
                 }else if(choice==0) {
                     System.out.println("Bye!!");
                     System.exit(0);;
@@ -49,8 +55,9 @@ public class Dialog {
     public void clientManager(){
         do {
             System.out.println("\n************************** Client Manager ********************************");
-            System.out.println("\n\t1. Create Client.\t\t\t\t3. See Clients.");
-            System.out.println("\n\t2. Remove Client.\t\t\t\t0. Back.");
+            System.out.println("\n\t1. Create Client.\t\t\t\t4. Search Client.");
+            System.out.println("\n\t2. Remove Client.\t\t\t\t5. See All Clients.");
+            System.out.println("\n\t3. Update Client.\t\t\t\t0. Back.");
             System.out.println("\n**************************************************************************");
             int choice = scanner.nextInt();
             try {
@@ -67,8 +74,24 @@ public class Dialog {
                     System.out.println("Client ID: ");
                     int id = scanner.nextInt();
                     clientController.deleteById((long) id);
-
                 } else if (choice == 3) {
+                    System.out.println(clientController.findAll());
+                    System.out.println("Client ID: ");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Dni: ");
+                    String dni = scanner.nextLine();
+                    System.out.println("Name: ");
+                    String name = scanner.nextLine();
+                    System.out.println("Surname: ");
+                    String surname = scanner.nextLine();
+                    clientController.update((long) id, dni, name, surname);
+                } else if (choice == 4) {
+                    scanner.nextLine();
+                    System.out.println("Dni: ");
+                    String dni = scanner.nextLine();
+                    System.out.println(clientController.findByDni(dni));
+                } else if (choice == 5) {
                     System.out.println(clientController.findAll());
                 } else if(choice==0) {
                     getStarted();

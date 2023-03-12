@@ -5,10 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class ClientRepositoryTest {
 
     ClientRepository repository;
@@ -64,6 +60,19 @@ class ClientRepositoryTest {
     void findById() {
         Assertions.assertEquals("87896685P", repository.findById(1L).getDni());
         Assertions.assertEquals("Nora", repository.findById(2L).getName());
+    }
+    @Test
+    void findByDni(){
+        Assertions.assertEquals(1, repository.findByDni("87896685P").getId());
+        Assertions.assertEquals("Nora", repository.findByDni("99687554K").getName());
+    }
+
+    @Test
+    void update(){
+        Assertions.assertEquals("87896685P", repository.findById(1L).getDni());
+        Client client = new Client(1L, "4453366OT", "Ignacio", "Pérez");
+        repository.update(client);
+        Assertions.assertEquals("4453366OT", repository.findById(1L).getDni());
     }
 
 }

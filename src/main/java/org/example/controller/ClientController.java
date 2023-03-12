@@ -28,5 +28,14 @@ public class ClientController {
         return service.findAll();
     }
 
+    public Client findByDni(String dni){
+        return service.findByDni(dni);
+    }
+
+    public void update(Long id, String dni, String name, String surname){
+        Client client = new Client(id, dni, name, surname);
+        service.update(client);
+    }
+
 
 }
