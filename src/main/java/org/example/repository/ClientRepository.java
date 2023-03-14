@@ -65,13 +65,6 @@ public class ClientRepository implements IClientRepository{
         return null;
     }
 
-    public void update(Long id){
-        Client client = findById(id);
-        if(client != null){
-
-        }
-    }
-
     public boolean isEmpty(){
         if(clients.size() == 0){
             return true;
