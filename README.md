@@ -22,3 +22,7 @@ Queremos utilizar metodologías ágiles y además seguiremos la práctica TDD pa
 inicialmente se crearán los test de una clase y se desarrollará todas las funcionalidades de la misma.
 
 Necesitamos un diagrama de casos de uso que cubra las funcionalidades mínimas para que los clientes puedan alquilar.
+
+Además partimos de un desarrollo inicial que cubre todas las funcionalidades CRUD de la clase cliente. Falta por implementar alquilarCoche, ya que de momento, la única clase existente en el proyecto es Cliente. Siguiendo con la arquitectura propuesta y basándonos en TDD, desarrollar todas las funcionalidades obtenidas en los casos de uso.
+
+
