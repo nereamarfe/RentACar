@@ -4,7 +4,7 @@ Plantilla inicial para la aplicación de alquiler de coches
 Vamos a desarrollar una  aplicación de Renting para una pequeña empresa.
 Nos hemos reunido el cliente y hemos recogido estos requisitos:
 
-• Los clientes pueden alquilar los coches vía web o en la oficina física.
+• Los clientes pueden alquilar los coches vía web o en la oficina física.\n
 • Los clientes van a tener un id y un nombre
 • Los coches van a tener una matrícula además de un modelo. A cada modelo se
   le aplicará un precio por día distinto.
