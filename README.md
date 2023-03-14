@@ -14,7 +14,7 @@ Nos hemos reunido el cliente y hemos recogido estos requisitos:
 • Cada oficina tendrá una dirección y un cargo extra.
 
 • Quiere que únicamente los alquileres vía web puedan dejar el coche en una
-  oficina distinta a la de origen. En la que se le aplicará el cargo extra.
+    oficina distinta a la de origen. En la que se le aplicará el cargo extra.
 
 ![image](https://user-images.githubusercontent.com/127649698/224941468-3a55bdf0-eec4-4349-8890-2a28bc53a200.png)
 
