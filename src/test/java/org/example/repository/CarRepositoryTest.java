@@ -78,9 +78,9 @@ class CarRepositoryTest {
 
     @Test
     void isEmpty() {
-        Assertions.assertEquals(false,repository.isEmpty());
+        Assertions.assertEquals(false,repository.findAll().isEmpty());
         repository.deleteById(1L);
         repository.deleteById(2L);
-        Assertions.assertEquals(true,repository.isEmpty());
+        Assertions.assertEquals(true,repository.findAll().isEmpty());
     }
 }

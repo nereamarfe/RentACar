@@ -32,7 +32,7 @@ public class ClientRepository implements IClientRepository{
     }
 
     public void deleteById(Long id){
-        if(!isEmpty()) {
+        if(!clients.isEmpty()) {
             Iterator<Client> iterator = clients.iterator();
             while (iterator.hasNext()){
                 Client client = iterator.next();
@@ -45,7 +45,7 @@ public class ClientRepository implements IClientRepository{
     }
 
     public Long nextIdAvailable(){
-        if(!isEmpty()){
+        if(!clients.isEmpty()){
             return clients.get(clients.size()-1).getId() + 1;
         }
         else{
@@ -54,7 +54,7 @@ public class ClientRepository implements IClientRepository{
     }
 
     public Client findById(Long id) {
-        if(!isEmpty()){
+        if(!clients.isEmpty()){
             for (Client client : clients) {
                 if(client.getId() == id){
                     return client;
@@ -65,15 +65,10 @@ public class ClientRepository implements IClientRepository{
         return null;
     }
 
-    public boolean isEmpty(){
-        if(clients.size() == 0){
-            return true;
-        }
-        return false;
-    }
+
 
     public Client findByDni(String dni){
-        if(!isEmpty()){
+        if(!clients.isEmpty()){
             for (Client client : clients) {
                 if(client.getDni().equals(dni)){
                     return client;

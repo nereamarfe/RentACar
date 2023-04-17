@@ -19,7 +19,7 @@ public class CarRepository implements ICarRepository{
 
     @Override
     public void deleteById(Long id) {
-        if(!isEmpty()) {
+        if(!cars.isEmpty()) {
             Iterator<Car> iterator = cars.iterator();
             while (iterator.hasNext()){
                 Car car = iterator.next();
@@ -38,7 +38,7 @@ public class CarRepository implements ICarRepository{
 
     @Override
     public Long nextIdAvailable() {
-        if(!isEmpty()){
+        if(!cars.isEmpty()){
             return cars.get(cars.size()-1).getId() + 1;
         }
         else{
@@ -48,7 +48,7 @@ public class CarRepository implements ICarRepository{
 
     @Override
     public Car findById(Long id) {
-        if(!isEmpty()){
+        if(!cars.isEmpty()){
             for (Car car : cars) {
                 if(car.getId() == id){
                     return car;
@@ -61,7 +61,7 @@ public class CarRepository implements ICarRepository{
 
     @Override
     public Car findByLisencePlate(String lisencePlate) {
-        if(!isEmpty()){
+        if(!cars.isEmpty()){
             for (Car car : cars) {
                 if(car.getLisencePlate().equals(lisencePlate)){
                     return car;
@@ -80,10 +80,5 @@ public class CarRepository implements ICarRepository{
         }
     }
 
-    public boolean isEmpty(){
-        if(cars.size() == 0){
-            return true;
-        }
-        return false;
-    }
+
 }
